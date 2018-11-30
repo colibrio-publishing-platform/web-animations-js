@@ -87,7 +87,7 @@ module.exports = function(grunt) {
     config.wrap[target] = {
       source: source,
       preamble: '(function() {\n' +
-                '  if (document.documentElement.animate) {\n' +
+                '  if (!/Firefox/.test(navigator.userAgent) && document.documentElement.animate) {\n' +
                 '    var player = document.documentElement.animate([], 0);\n' +
                 '    var load = true;\n' +
                 '    if (player) {\n' +
